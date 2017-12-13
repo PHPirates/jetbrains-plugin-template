@@ -1,11 +1,13 @@
 plugins {
     id 'org.jetbrains.intellij' version '0.2.17'
+//    id 'org.jetbrains.kotlin.jvm' version '1.2.0'
 }
 
 group 'com.example'
 version '0.1'
 
 apply plugin: 'java'
+//apply plugin: 'kotlin'
 
 sourceCompatibility = 1.8
 
@@ -14,7 +16,15 @@ repositories {
 }
 
 dependencies {
+//    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     testCompile group: 'junit', name: 'junit', version: '4.12'
+//    testCompile "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
+}
+
+sourceSets {
+    main.java.srcDirs += 'src/com/example/pluginci'
+    main.resources.srcDirs += 'resources/'
+//    main.kotlin.srcDirs += 'src/'
 }
 
 intellij {

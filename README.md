@@ -2,6 +2,11 @@
 
 # Sample Jetbrains plugin with gradle build
 
+# Features
+* Uses Travis-CI
+*
+* Since Travis-CI recommends [not to use cache](https://docs.travis-ci.com/user/caching/#Things-not-to-cache) for files slow to download and quick to install, this will not cache the IntelliJ binaries.
+
 # Setup instructions
 These are for building this sample plugin, adapt for your own plugin.
 
