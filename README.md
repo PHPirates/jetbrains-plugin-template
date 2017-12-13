@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/PHPirates/jetbrains-plugin-gradle.svg?branch=master)](https://travis-ci.org/PHPirates/jetbrains-plugin-gradle)
+
 # Sample Jetbrains plugin with gradle build
 
 # Setup instructions
