@@ -22,6 +22,7 @@
         <group id="MyPlugin.SampleMenu" text="Greeting" description="Greeting menu">
             <add-to-group group-id="MainMenu" anchor="last"/>
             <action id="Myplugin.Textboxes" class="com.example.pluginci.HelloAction" text="Hello" description="Says hello"/>
+            <action id="Myplugin.TextboxesKt" class="com.example.pluginci.HelloKtAction" text="Hello Kotlin" description="Says hello"/>
         </group>
     </actions>
 </idea-plugin>

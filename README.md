@@ -4,7 +4,7 @@
 
 # Features
 * Uses Travis-CI
-*
+* Uses both Java and Kotlin
 * Since Travis-CI recommends [not to use cache](https://docs.travis-ci.com/user/caching/#Things-not-to-cache) for files slow to download and quick to install, this will not cache the IntelliJ binaries.
 
 # Setup instructions
