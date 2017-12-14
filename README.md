@@ -5,6 +5,7 @@
 # Features
 * Uses Travis-CI
 * Uses both Java and Kotlin
+* Demonstrates a non-standard source directory, as well as multiple source directories (for example for generated files).
 * Since Travis-CI recommends [not to use cache](https://docs.travis-ci.com/user/caching/#Things-not-to-cache) for files slow to download and quick to install, this will not cache the IntelliJ binaries.
 
 # Setup instructions

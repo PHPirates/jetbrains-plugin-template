@@ -9,7 +9,8 @@ class HelloKtAction : AnAction("Say Hi.") {
 
     override fun actionPerformed(e: AnActionEvent?) {
         val project = e?.getData(PlatformDataKeys.PROJECT)
-        Messages.showMessageDialog(project, "Hello Kotlin!", "GreetingKt", Messages.getInformationIcon())
+        val greeting = HelloProvider.getHello()
+        Messages.showMessageDialog(project, greeting, "GreetingKt", Messages.getInformationIcon())
     }
 
 }
