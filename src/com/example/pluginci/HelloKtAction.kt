@@ -9,8 +9,11 @@ class HelloKtAction : AnAction("Say Hi.") {
 
     override fun actionPerformed(e: AnActionEvent?) {
         val project = e?.getData(PlatformDataKeys.PROJECT)
+        // Demonstrate using 'generated' files
         val greeting = HelloProvider.getHello()
-        Messages.showMessageDialog(project, greeting, "GreetingKt", Messages.getInformationIcon())
+        // Demonstrate using non-Java/Kotlin files in resources directory
+        val title = javaClass.classLoader.getResource("auxiliary/title.txt").readText()
+        Messages.showMessageDialog(project, greeting, title, Messages.getInformationIcon())
     }
 
 }
