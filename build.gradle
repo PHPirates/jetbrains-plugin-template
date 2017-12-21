@@ -20,6 +20,10 @@ sourceSets {
     main.resources.srcDirs += 'resources/'
     main.kotlin.srcDirs += 'src/'
     main.kotlin.srcDirs += 'gen/'
+
+    // Specify test directories
+    test.java.srcDirs += 'test/'
+    test.kotlin.srcDirs += 'test/'
 }
 
 // Specify the right jvm target for Kotlin

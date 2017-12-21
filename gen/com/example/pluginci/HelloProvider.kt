@@ -2,7 +2,7 @@
 
 package com.example.pluginci
 
-object HelloProvider {
+public object HelloProvider {
     fun getHello() : String {
         return "Hello Kotlin!"
     }
