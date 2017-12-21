@@ -6,22 +6,15 @@ plugins {
 group 'com.example'
 version '0.1'
 
-apply plugin: 'java'
-apply plugin: 'kotlin'
-
-sourceCompatibility = 1.8
-
 repositories {
     mavenCentral()
 }
 
-dependencies {
-//    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    testCompile group: 'junit', name: 'junit', version: '4.12'
-//    testCompile "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
-}
+// Java target version
+sourceCompatibility = 1.8
 
 sourceSets {
+    // Specify source directories per language
     main.java.srcDirs += 'src/'
     main.java.srcDirs += 'gen/'
     main.resources.srcDirs += 'resources/'
@@ -29,9 +22,32 @@ sourceSets {
     main.kotlin.srcDirs += 'gen/'
 }
 
+// Specify the right jvm target for Kotlin
+compileKotlin {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+        apiVersion = "1.2"
+        languageVersion = "1.2"
+    }
+}
+
+dependencies {
+    // From Kotlin documentation
+    compile "org.jetbrains.kotlin:kotlin-stdlib"
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    compile "org.jetbrains.kotlin:kotlin-reflect"
+
+    // just in case, version number specified in buildscript is used by default
+    compile "org.jetbrains.kotlin:kotlin-reflect"
+}
+
 intellij {
     version '2017.3'
 }
+
 patchPluginXml {
     changeNotes """
       Add change notes here.<br>
