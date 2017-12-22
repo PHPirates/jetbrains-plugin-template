@@ -4,8 +4,6 @@ before_install: chmod +x gradlew
 notifications:
   email: false
 script:
-  # Prepare releases directory
-  - mkdir build/releases
   # This replaces the default tasks, so we have to specify again to run the tests (which fall under the 'check' task)
   - ./gradlew check
   # Also execute the gradle task 'zip' to generate a customized release zip
@@ -14,8 +12,10 @@ deploy:
   provider: releases
   api_key:
     secure: j4TrZHf9orA1LUXi2h+7+MGvc/J45EapSPT/H+gn0jdONJKwd84xZNjEUX9qpfBBRYwC7tXtrrTgU2Z/YDZsyTtD/Qv5U9JRy/pYZcbwv26RTrYWbsXLQVqrd7SpXvPvOTVLtdlpH9anw8nEX7KKpWP7cjXDsc2KJBTX8q+aHadt0E/lc9X9pcM+kM+/cLZ1+JO/x7UyYdUnHQDAq+bURwBjZeOq5u+tcIWDmRI13Q9CGFZgugWZ3iIh3bO9XOWeFLDAp7m1GYWLgZXfJ/RZDX16URBVUM2qjrwkCerBShzMXozvD6oDth3xNaL3VkwImhBmurpJpVfOEpuv8D1mnfVVYOX6u+aWsl07VYKDinP+zE9OzNJEZXadhCZuRvvsHxJI6WI2qwhcc9US1xvCCSwgkr0I0JsKtsd8Gfoy+GWTWrkBfGkotqTSLIEEkfwP6jk1v+H+HFuEl7UtOuSkc6AWSwf/mX0VLZuNP2UMwJFMLvEDnHC4bGypaeB+137R6tVtv0Ed2Rc9fSylcvCQx92mOnGfyGm4/VgIJ4LxVpPS3DmTq4I8uy8dWcrX+IHchcBlHFGDXhAO+jteqOb89hPufkFO89DuCjp12z88iceS/ZzMdW8BOC0vnoAdppaiDer2kP5QBw6Z0jvpTeMfRjiEI8q5O/urV2G08QC1VKI=
+  # Enables wildcards in filename
+  file_glob: true
   file:
-  - ./build/releases/jetbrains-plugin-gradle-0.1.zip
+  - ./build/releases/jetbrains-plugin-gradle-*.zip
   skip_cleanup: true
   on:
     tags: true
