@@ -3,9 +3,12 @@ jdk: oraclejdk8
 before_install: chmod +x gradlew
 notifications:
   email: false
-# Also execute the gradle task 'zip' to generate a customized release zip
 script:
+  # Prepare releases directory
+  - mkdir build/releases
+  # This replaces the default tasks, so we have to specify again to run the tests (which fall under the 'check' task)
   - ./gradlew check
+  # Also execute the gradle task 'zip' to generate a customized release zip
   - ./gradlew zip
 deploy:
   provider: releases
