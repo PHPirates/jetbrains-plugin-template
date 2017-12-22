@@ -57,3 +57,14 @@ patchPluginXml {
       Add change notes here.<br>
       <em>most HTML tags may be used</em>"""
 }
+
+// Copy jar and dependencies in 'lib/' (if there are any) to a zip with the folder structure IntelliJ understands
+task zip(type: Zip) {
+
+    into('jetbrains-plugin-gradle/lib') {
+        from jar
+        from 'lib'
+    }
+
+    destinationDir(file('build/releases/'))
+}
