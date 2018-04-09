@@ -1,6 +1,9 @@
 plugins {
-    id 'org.jetbrains.intellij' version '0.2.17'
-    id 'org.jetbrains.kotlin.jvm' version '1.2.0'
+    id 'org.jetbrains.intellij' version '0.3.1'
+    id 'org.jetbrains.kotlin.jvm' version '1.2.31'
+    // Plugin which can update Gradle dependencies, use other/useLatestVersions
+    id 'se.patrikerdes.use-latest-versions' version '0.2.0'
+    id 'com.github.ben-manes.versions' version '0.17.0'
 }
 
 group 'com.example'
@@ -11,7 +14,7 @@ repositories {
 }
 
 // Java target version
-sourceCompatibility = 1.8
+sourceCompatibility = 1.9
 
 sourceSets {
     // Specify source directories per language
@@ -28,11 +31,11 @@ sourceSets {
 
 // Specify the right jvm target for Kotlin
 compileKotlin {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
+    sourceCompatibility = JavaVersion.VERSION_1_9
+    targetCompatibility = JavaVersion.VERSION_1_9
 
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "1.9"
         apiVersion = "1.2"
         languageVersion = "1.2"
     }
@@ -40,11 +43,11 @@ compileKotlin {
 
 // Same for Kotlin tests
 compileTestKotlin {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
+    sourceCompatibility = JavaVersion.VERSION_1_9
+    targetCompatibility = JavaVersion.VERSION_1_9
 
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "1.9"
         apiVersion = "1.2"
         languageVersion = "1.2"
     }
@@ -63,14 +66,14 @@ dependencies {
 
     // Also compile junit 4, just in case
     testCompile("junit:junit:4.12")
-    testRuntime("org.junit.vintage:junit-vintage-engine:4.12.0-M4")
+    testRuntime("org.junit.vintage:junit-vintage-engine:5.1.1")
 
     // Use junit 5 for test cases
-    testCompile("org.junit.jupiter:junit-jupiter-api:5.0.0-M4")
-    testRuntime("org.junit.jupiter:junit-jupiter-engine:5.0.0-M4")
+    testCompile("org.junit.jupiter:junit-jupiter-api:5.1.1")
+    testRuntime("org.junit.jupiter:junit-jupiter-engine:5.1.1")
 
     // Enable use of the JUnitPlatform Runner within the IDE
-    testCompile("org.junit.platform:junit-platform-runner:1.0.0-M4")
+    testCompile("org.junit.platform:junit-platform-runner:1.1.1")
 
     // just in case
     testCompile "org.jetbrains.kotlin:kotlin-test"
@@ -88,7 +91,7 @@ test {
 }
 
 intellij {
-    version '2017.3'
+    version '2018.1'
 }
 
 patchPluginXml {
