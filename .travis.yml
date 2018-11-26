@@ -1,8 +1,6 @@
 language: java
 jdk: oraclejdk9
 before_install: chmod +x gradlew
-notifications:
-  email: false
 script:
   # This replaces the default tasks, so we have to specify again to run the tests (which fall under the 'check' task)
   - ./gradlew check
