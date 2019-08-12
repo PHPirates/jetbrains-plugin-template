@@ -27,7 +27,7 @@ You will be launching a brand new IntelliJ instance, so the first time you get t
 Note how IntelliJ adds this task as a run configuration in the normal location if you have run it once. 
 
 ## To generate a zip which contains the plugin
-Click the Gradle button on the right, the gradle task is located in Tasks - other - zip. Right-click and run. The zip will be in build/releases.
+Click the Gradle button on the right, the gradle task is located in Tasks - intellij - buildPlugin. Right-click and run. The zip will be in build/distributions.
 
 ## To run tests
 Click the Gradle button on the right, the gradle task is located in Tasks - verification - check. Right-click and run. Note that check includes test so it will run the tests.
