@@ -1,5 +1,5 @@
 plugins {
-    id 'org.jetbrains.intellij' version '0.4.14'
+    id 'org.jetbrains.intellij' version '0.4.15'
     id 'org.jetbrains.kotlin.jvm' version '1.3.61'
     // Plugin which can update Gradle dependencies, use other/useLatestVersions
     id 'se.patrikerdes.use-latest-versions' version '0.2.13'
@@ -36,8 +36,6 @@ compileKotlin {
 
     kotlinOptions {
         jvmTarget = "1.8"
-        apiVersion = "1.2"
-        languageVersion = "1.2"
     }
 }
 
@@ -48,8 +46,6 @@ compileTestKotlin {
 
     kotlinOptions {
         jvmTarget = "1.8"
-        apiVersion = "1.2"
-        languageVersion = "1.2"
     }
 }
 
@@ -65,15 +61,15 @@ dependencies {
     // Test dependencies
 
     // Also compile junit 4, just in case
-    testCompile("junit:junit:4.13-rc-1")
-    testRuntime("org.junit.vintage:junit-vintage-engine:5.6.0-M1")
+    testCompile("junit:junit:4.13")
+    testRuntime("org.junit.vintage:junit-vintage-engine:5.6.0")
 
     // Use junit 5 for test cases
-    testCompile("org.junit.jupiter:junit-jupiter-api:5.6.0-M1")
-    testRuntime("org.junit.jupiter:junit-jupiter-engine:5.6.0-M1")
+    testCompile("org.junit.jupiter:junit-jupiter-api:5.6.0")
+    testRuntime("org.junit.jupiter:junit-jupiter-engine:5.6.0")
 
     // Enable use of the JUnitPlatform Runner within the IDE
-    testCompile("org.junit.platform:junit-platform-runner:1.6.0-M1")
+    testCompile("org.junit.platform:junit-platform-runner:1.6.0")
 
     // just in case
     testCompile "org.jetbrains.kotlin:kotlin-test"
