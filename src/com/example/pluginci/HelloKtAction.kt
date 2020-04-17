@@ -12,7 +12,7 @@ class HelloKtAction : AnAction("Say Hi.") {
         // Demonstrate using 'generated' files
         val greeting = HelloProvider.getHello()
         // Demonstrate using non-Java/Kotlin files in resources directory
-        val title = javaClass.classLoader.getResource("auxiliary/title.txt").readText()
+        val title = javaClass.classLoader.getResource("auxiliary/title.txt")?.readText() ?: return
         Messages.showMessageDialog(project, greeting, title, Messages.getInformationIcon())
     }
 
