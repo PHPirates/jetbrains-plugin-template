@@ -1,4 +1,3 @@
-[![Build Status](https://travis-ci.org/PHPirates/jetbrains-plugin-template.svg?branch=master)](https://travis-ci.org/PHPirates/jetbrains-plugin-template)
 ![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/PHPirates/jetbrains-plugin-template/CI/master)
 [![codecov](https://img.shields.io/codecov/c/github/Hannah-Sten/TPHPirates/jetbrains-plugin-template/master)](https://codecov.io/gh/PHPirates/jetbrains-plugin-template)
 
