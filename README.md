@@ -1,4 +1,6 @@
 [![Build Status](https://travis-ci.org/PHPirates/jetbrains-plugin-template.svg?branch=master)](https://travis-ci.org/PHPirates/jetbrains-plugin-template)
+![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/PHPirates/jetbrains-plugin-template/CI/master?style=flat-square)
+
 
 # Sample Jetbrains plugin with gradle build
 
