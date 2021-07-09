@@ -4,6 +4,8 @@
 
 # Sample Jetbrains plugin with gradle build
 
+Note: after this repo was created, Jetbrains created their own template at https://github.com/JetBrains/intellij-platform-plugin-template
+
 # Features
 * Uses Gradle to build the plugin.
 * Uses Travis-CI to let Travis automatically build the plugin and run tests on every push.
